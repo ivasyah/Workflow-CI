@@ -1,4 +1,4 @@
-name: loan-prediction
+name: loan-prediction-ci
 
 entry_points:
   main:
