@@ -35,9 +35,10 @@ jobs:
       run: |
         # Menggunakan --env-manager local karena dependensi sudah diinstal di step sebelumnya
         mlflow run . --env-manager local
-
-    - name: Get Latest MLflow Run ID
+        
+    - name: Run MLflow Project
+      working-directory: ./MLProject
       run: |
-        echo "Training completed successfully."
-        # Perintah ini akan menampilkan ID run terakhir di console log
-        ls mlruns/
+        # Kita tidak perlu set tracking URI di shell, 
+        # MLflow akan otomatis membuat folder mlruns di direktori aktif
+        mlflow run . --env-manager local
