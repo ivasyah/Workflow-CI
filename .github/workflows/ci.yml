@@ -31,9 +31,10 @@ jobs:
         pip --version
 
     - name: Run MLflow Project
+      working-directory: ./MLProject  # Masuk ke folder tempat file MLProject berada
       run: |
-        # Menjalankan mlflow run pada direktori tempat file MLProject berada
-        mlflow run . --no-conda
+        # Menggunakan --env-manager local karena dependensi sudah diinstal di step sebelumnya
+        mlflow run . --env-manager local
 
     - name: Get Latest MLflow Run ID
       run: |
