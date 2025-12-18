@@ -35,10 +35,3 @@ jobs:
       run: |
         # Menggunakan --env-manager local karena dependensi sudah diinstal di step sebelumnya
         mlflow run . --env-manager local
-        
-    - name: Run MLflow Project
-      working-directory: ./MLProject
-      run: |
-        # Kita tidak perlu set tracking URI di shell, 
-        # MLflow akan otomatis membuat folder mlruns di direktori aktif
-        mlflow run . --env-manager local
